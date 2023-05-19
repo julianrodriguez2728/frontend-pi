@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+.Form{
+    border-radius: 10px;
+    background-color: rgb(241, 130, 86);
+    width: auto;
+    height: auto;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.btnForm{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#myButton{
+    color: white;
+    margin: 2px;
+}
+#myButton.active{
+    background-color: aqua;
+}
+.errorType{
+    color: red;
+}
+.formContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 120px;
+}
+.container-input{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+}
+label{
+    padding-bottom: 6px;
+    color: rgb(243, 239, 239);
+    font-family: 'Roboto Condensed', sans-serif;    
+}
+input{
+    background-color: rgb(51, 49, 49);
+    width: 300px;
+    padding: 14px;
+    border-radius: 6px;
+    border: none;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 18px;
+    color: white;
+}
+input:focus{
+    outline: none;
+}
+.butonForm{
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+    color: white;
+    width: 150px;
+    height: 45px;
+    background-color: rgb(84, 75, 117);
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 20px;
+}
+/* .buton{
+
+} */

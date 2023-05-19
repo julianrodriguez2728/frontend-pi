@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+
+.number{
+    color: rgb(216, 174, 59);
+    font-family: 'League Gothic', sans-serif;
+    font-size: 30px;
+
+    margin: 20px;
+    background-color: rgb(146, 167, 146);
+
+    padding: 10px;
+    border-radius: 5px;
+}
+.numberC{
+    margin: 20px;
+    font-family: 'League Gothic', sans-serif;
+
+}
+.containerPaginate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.botonPN{
+    border: none;
+    cursor: pointer;
+    padding: 20px;
+    background-color: rgb(80, 65, 49);
+    color: rgb(255, 234, 225);
+    transition: all .2s;
+    font-size: 10px;
+}
+.botonPN:hover{
+    background-color: antiquewhite;
+    color: rgb(80, 65, 49) ;
+}

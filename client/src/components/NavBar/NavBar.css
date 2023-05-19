@@ -1,0 +1,72 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
+
+nav{
+    position: fixed;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(80, 65, 49);
+}
+.title{
+    color: white;
+    font-family: 'Tilt Warp', cursive;
+    font-size: 35px;
+}
+.botonsLanding{
+    display: flex;
+    align-items: center;
+}
+.btnLanding{
+    border: none;
+    padding: 10px;
+    width: auto;
+    text-align: center;
+    cursor: pointer;
+    margin: 2px;
+    border-radius: 2px;
+    background-color: rgb(255, 234, 225);
+    color: rgb(80, 65, 49);
+    font-family: 'Archivo Black', sans-serif;
+    transition: all.3s;
+}
+.btnLanding:hover{
+    background-color: rgb(80, 65, 49);
+    color: rgb(255, 234, 225);
+    border: 1px solid rgb(255, 234, 225);
+}
+option{
+    text-align: center;
+}
+.containerGeneral{
+    padding-top: 100px;
+}
+.searchBtn{
+    max-width: 25px;
+}
+.searchbar{
+    width: 200px;
+    padding: 8px;
+    text-align: start;
+    border: none;
+    font-family: 'League Gothic', sans-serif;
+    font-size: 25px;
+    background-color: rgb(241, 241, 234);
+    color: rgb(0, 0, 0);
+}
+.searchbar:focus{
+    outline: none;
+}
+.butonS{
+    width: 45px;
+    border: none;
+    background-color: rgb(206, 119, 19);
+    cursor: pointer;
+}
+.formSearch{
+    margin: 20px;
+    display: flex;
+}

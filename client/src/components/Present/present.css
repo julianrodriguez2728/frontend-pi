@@ -1,0 +1,42 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
+
+.presContainer{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(97, 77, 65);
+}
+.butons{
+    height:  70%;
+    width: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.btnP{
+    cursor: pointer;
+    color: white;
+    font-family: 'Tilt Warp', cursive;
+    background: none;
+    font-size: 150px;
+    transition: all .5s;
+}
+.imgP{
+    max-width: 150px;
+}
+.image{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.tituloP{
+    font-family: 'Concert One', cursive;
+    color: white;
+}
+.btnP:hover{
+    font-size: 160px;
+    color: rgb(197, 134, 82);
+}

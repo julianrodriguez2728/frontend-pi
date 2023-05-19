@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+body{
+    background-color: rgb(255, 226, 213);
+}
+#img-dogs{
+border-radius: 20px 20px 0px 0px ;
+width: 400px;
+height: 300px;
+}
+.cards-container{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.container2{
+    margin: 20px;
+    padding-top: 20px;
+}
+.contianer-detail{
+    border-top: 2px solid white;
+    border-bottom: 2px solid white;
+    width: auto;
+}
+.dog-container{
+    background-color: rgb(146, 167, 146);
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    -webkit-box-shadow: 2px 1px 48px -8px rgba(0,0,0,0.68);
+-moz-box-shadow: 2px 1px 48px -8px rgba(0,0,0,0.68);
+box-shadow: 2px 1px 48px -8px rgba(0,0,0,0.68);
+    align-items: center;
+    width: auto;
+    height: 350px;
+    text-align: center;
+}
+.temperamentContainer{
+    width: 300px;
+    height: 100px;
+    text-align: center;
+}
+h4{
+    font-family: 'Oswald', sans-serif;
+    color: rgb(241, 240, 223);
+    font-size: 20px;
+}
+h3{
+    font-family: 'Comfortaa', cursive;
+    color: white;
+}
+.title-dog{
+    color: white;
+    font-family: 'Black Han Sans', sans-serif;
+    font-size: 20px;
+}
+.containerGeneral{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.paginate{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

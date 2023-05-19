@@ -2,13 +2,26 @@ const { createdDog, dogos, dogFn , getName, temperament} = require("../controlle
 
 const dogsRace = async(req, res) => {
 
+    const {nombre} =  req.query;
+    // const min = name.toLowerCase()
+    // console.log(min)
     try {
+        if(nombre){
+            const resp = await getName(nombre)
+            if(resp.length !== 0){
+                res.status(200).json(resp)
+            }else{
+                throw Error("el perrito no existe papi")
+            }
+            
+        } else{
 
-        const response = await dogos();
-        res.status(200).json(response)
-
+            const results = await dogos()
+            res.status(200).json(results)
+        }
+        
     } catch (error) {
-
+        
         res.status(400).json({error: error.message})
 
     }
@@ -16,14 +29,16 @@ const dogsRace = async(req, res) => {
 
 const createDog = async (req,res) => {
 
-    const {name, altura, peso, image, years} = req.body;
+    const {nombre, altura, peso, years, temperamento,image} = req.body;
 
     try {
-        const response = await createdDog(name,altura,peso,image,years);
+        const response = await createdDog(nombre,altura,peso,years,temperamento,image);
         res.status(200).json(response)
 
     } catch (error) {
+
         res.status(400).json({error: error.message})
+        
     }
 }
 const dogDetail = async(req,res) => {
@@ -42,22 +57,22 @@ const dogDetail = async(req,res) => {
         res.status(400).json({error:error.message})
     }
 }
-const dogName = async(req,res) => {
-    const {name} = req.query;
-    const min = name.toLowerCase()
+// const dogName = async(req,res) => {
+//     const {name} = req.query;
+//     const min = name.toLowerCase()
 
-    const response = await getName(min)
+//     const response = await getName(min)
 
-    try {
+//     try {
 
-        res.status(200).json(response)
+//         res.status(200).json(response)
         
-    } catch (error) {
+//     } catch (error) {
 
-        res.status(400).json({error:error.message});
+//         res.status(400).json({error:error.message});
 
-    }
-}
+//     }
+// }
 const temperamentDogs = async (req,res) => {
     try {
         const response = await temperament();
@@ -73,6 +88,5 @@ module.exports = {
     createDog,
     dogsRace,
     dogDetail,
-    dogName,
     temperamentDogs
 }

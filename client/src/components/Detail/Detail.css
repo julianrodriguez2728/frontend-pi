@@ -1,0 +1,27 @@
+.allDetail{
+    padding-top: 200px;
+    display: flex;
+    justify-content: center;
+}
+.detailContainer{
+    padding: 30px;
+    width: auto ;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(131, 100, 100);
+    border-radius: 20px;
+}
+.imageDetail{
+    height: 300px;
+    width: 400px;
+}
+
+.container-info{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

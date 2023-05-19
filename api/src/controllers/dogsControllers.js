@@ -1,4 +1,4 @@
-const { where } = require("sequelize");
+
 const {Dog} = require("../db");
 const axios = require('axios');
 const {Temperament} = require("../db");
@@ -14,45 +14,79 @@ const dogos = async() =>{
     const response = data.map((element) =>  {
         return{
             id: element.id,
-            image: element.image,
+            image: element.image.url,
+            imageId: element.image.id,
             nombre: element.name,
-            altura: element.height,
-            peso: element.weight,
+            altura: element.height.metric,
+            peso: element.weight.imperial,
             temperamento: element.temperament,
             years: element.life_span
         }
     })
-    return [...bdd, ...response]
+    let results = [...bdd, ...response];
+
+    // const limit = 25; // Cantidad deseada de elementos
+  
+    // if (limit && Number.isInteger(Number(limit))) {
+    //   let i = 0;
+    //   let limitedResults = [];
+    //   while (i < limit && i < results.length) {
+    //     limitedResults.push(results[i]);
+    //     i++;
+    //   }
+    //   results = limitedResults;
+    // }
+  
+    return results;
 }
 const dogFn = async(id, source) => {
-    let api = await axios.get(`https://api.thedogapi.com/v1/breeds/${id}`);
-   
-    const user =  source === "api" ? api.data : await Dog.findByPk(id);
+    let api = await dogos();
+    console.log(api)
+
+    let filterId = api.filter((element)=> {
+       return  element.id === +id
+    })
+    
+    const user =  source === "api" ? filterId : await Dog.findByPk(id);
   
     return user
 }
 
 
-const createdDog = async(name, altura, peso, image,years)=>{
+const createdDog = async(nombre, altura, peso, years, temperamento,image)=>{
 
-     return await Dog.create({name, altura, peso,image,years});
+     return await Dog.create({nombre, altura, peso,years,temperamento,image});
 
 };
 
-const getName = async (name) => {
+const getName = async (nombre) => {
+    const name = nombre.toLowerCase();
     const bdd = await Dog.findAll({
         where: {
-            name: name
+            nombre: name
         }
     });
-    const {data} = await axios.get(`https://api.thedogapi.com/v1/breeds/?api_key=${API_KEY}`);
+    let api = await dogos();
+
 
    
     if(bdd.length > 0){
         return bdd
     }
+    const response = api.filter(dog => dog.nombre.toLowerCase() === nombre);
 
-    return data.filter(dog => dog.name.toLowerCase() === name);
+
+    return response.map((element)=> {
+        return{
+            id: element.id,
+            image: element.image,
+            nombre: element.nombre,
+            altura: element.altura,
+            peso: element.peso,
+            temperamento: element.temperamento,
+            years: element.years
+        }
+    })
 }
 
 const temperament = async() => {
