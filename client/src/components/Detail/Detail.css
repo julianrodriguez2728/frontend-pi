@@ -25,3 +25,26 @@
     justify-content: center;
     align-items: center;
 }
+@media (max-width: 714px){
+    .imageDetail{
+        height: 200px;
+        width: 300px;
+    }
+    .allDetail{
+        padding-top: 300px;
+        display: flex;
+        justify-content: center;
+    }
+    .detailContainer{
+        
+        width: 100% ;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: rgb(131, 100, 100);
+        border-radius: 20px;
+    }
+}

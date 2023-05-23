@@ -3,7 +3,7 @@ import "./cards.css"
 
 const CardDog = ({nombre, image,  peso ,temperamento,id}) => {
     return(
-        <div className="container2">
+        <div className="container2" key={id}>
             <Link to={`/dogs/${id}`}>
             <img src={image} alt="" id="img-dogs" />
             </Link>

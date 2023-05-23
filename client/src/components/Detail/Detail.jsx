@@ -39,8 +39,8 @@ const Detail = () => {
             </div>
             <div className="container-info">
             <h1 className="title-dog">{dogId.nombre}</h1>
-            <h3>peso: {dogId.peso}</h3>
-            <h3>Altura: {dogId.altura}</h3>
+            <h3>peso: {dogId.peso}kg</h3>
+            <h3>Altura: {dogId.altura}cm</h3>
             <h3>Años: {dogId.years}</h3>
             {Array.isArray(dogId.temperamento) ? dogId.temperamento.map((e)=>{
                 return(

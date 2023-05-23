@@ -29,8 +29,10 @@
     color: rgb(255, 234, 225);
     transition: all .2s;
     font-size: 10px;
+    border-radius: 3px;
 }
 .botonPN:hover{
     background-color: antiquewhite;
     color: rgb(80, 65, 49) ;
+    border: solid 3px rgb(80, 65, 49);
 }

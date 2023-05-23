@@ -3,6 +3,7 @@ import CardDog from "../../Card/CardDog";
 import "../../Card/cards.css"
 
 const ApiDogs = () =>{
+      
     const perros = useSelector(state => state.dogs);
     let filter = perros.filter((dog)=>{
         return Number.isInteger(dog.id)

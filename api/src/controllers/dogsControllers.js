@@ -74,19 +74,23 @@ const getName = async (nombre) => {
         return bdd
     }
     const response = api.filter(dog => dog.nombre.toLowerCase() === nombre);
+    if(response.length === 0){
+        alert("NO HAY PERRO CON ESE NOMBRE")
+    }else{
+        return response.map((element)=> {
+            return{
+                id: element.id,
+                image: element.image,
+                nombre: element.nombre,
+                altura: element.altura,
+                peso: element.peso,
+                temperamento: element.temperamento,
+                years: element.years
+            }
+        })
+    }
 
-
-    return response.map((element)=> {
-        return{
-            id: element.id,
-            image: element.image,
-            nombre: element.nombre,
-            altura: element.altura,
-            peso: element.peso,
-            temperamento: element.temperamento,
-            years: element.years
-        }
-    })
+   
 }
 
 const temperament = async() => {

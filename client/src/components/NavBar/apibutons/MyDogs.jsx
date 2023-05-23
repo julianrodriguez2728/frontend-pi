@@ -1,19 +1,24 @@
 import {  useSelector } from "react-redux";
 import CardDog from "../../Card/CardDog";
 import "../../Card/cards.css"
+import { Link } from "react-router-dom";
+
 const MyDogs = () =>{
 
     const perros = useSelector(state => state.dogs);
     let filter = perros.filter((dog)=>{
         return isNaN(dog.id)
     })
+    
 
     console.log(filter)
     return(
         <div className="containerGeneral">
         <div className="cards-container">
             {
-                filter.map((dog)=>{
+                filter.length === 0 
+                ? <p>No tienes ningun perrito.... puedes crear tus perros haciendo click  <Link to="/form">acá</Link> </p> 
+                :filter.map((dog)=>{
                     return(
                         <CardDog 
                         key={dog.id}

@@ -73,3 +73,13 @@ input:focus{
 /* .buton{
 
 } */
+@media (max-width: 714px){
+    .formContainer{
+       padding-top: 300px;
+    }
+    .Form{
+        width: auto;
+        height: 580px;
+        padding: 25px;
+    }
+}

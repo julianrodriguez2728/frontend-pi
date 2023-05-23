@@ -59,7 +59,6 @@ const Form = ()=> {
 
 
     }
-    console.log(form)
     const include =  perritos.some(perrito => perrito.nombre === form.nombre);
 
     const handleError = ()=> {
@@ -75,23 +74,23 @@ const Form = ()=> {
             })
         }
         else errors.nombre = ''
-        if(form.altura > 40){
+        if(form.altura > 80){
             setErrors({
                 ...errors,
-                altura:"Enter a height less than 120"
+                altura:"Enter a height less than 40"
             })
         }else errors.altura= ''
 
-        if(form.peso > 70){
+        if(form.peso > 120){
             setErrors({
                 ...errors,
-                peso:"Enter a weight less than 70"
+                peso:"Enter a weight less than 120"
             })
         }else errors.peso= ''
-        if(form.years > 20){
+        if(form.years > 25){
             setErrors({
                 ...errors,
-                years:'Enter an age less than 20'
+                years:'Enter an age less than 25'
             })
         }else errors.years=''
     }
@@ -109,7 +108,6 @@ const Form = ()=> {
     }
     
 
-    console.log(perritos)
     return(
         <div className="formContainer">
             <form className="Form" onSubmit={handleSubmit}>

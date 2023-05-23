@@ -38,7 +38,7 @@ const CardDogs = () => {
                     })
             }
         </div>
-            <Paginate cantidad={cantidad}></Paginate>
+<Paginate cantidad={cantidad}></Paginate>
         </div>
     )
 }

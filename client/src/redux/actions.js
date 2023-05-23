@@ -19,9 +19,15 @@ export const getDogsById = (id) => {
 
 export const getDogsByName = (name) => {
   return async function(dispatch){
-      await axios.get(`http://localhost:3001/dogs/?nombre=${name}` )
-      .then(response => response.data)
-      .then(data => dispatch({type: DOG_SEARCH_NAME, payload: data}))
+    try {
+     const resp =  await axios.get(`http://localhost:3001/dogs/?nombre=${name}` )
+      let perr = resp.data;
+
+     if(perr.length > 0) dispatch({type: DOG_SEARCH_NAME, payload: perr})
+    } catch (error) {
+      alert("No se encontro el perro")
+    }
+      
   }
 }
 

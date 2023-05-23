@@ -10,8 +10,9 @@ const dogsRace = async(req, res) => {
             const resp = await getName(nombre)
             if(resp.length !== 0){
                 res.status(200).json(resp)
-            }else{
-                throw Error("el perrito no existe papi")
+            }
+            else{
+                alert("el perrito no existe papi")
             }
             
         } else{
@@ -21,7 +22,6 @@ const dogsRace = async(req, res) => {
         }
         
     } catch (error) {
-        
         res.status(400).json({error: error.message})
 
     }

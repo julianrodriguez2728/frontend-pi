@@ -2,20 +2,31 @@ import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
 import FilterButton from "./FilterBtn/FilterButton";
 import './NavBar.css';
+import { useState } from "react";
 
 const NavBar = ()=>{
+    const [isOpen, setIsOpen] = useState(false)
     return(
         <nav>
-        <h1 className="title">🐶Perritos🦴</h1>
-        <div className="botonsLanding"> 
-        <Link to="/home"><button className="btnLanding">HOME</button></Link>
-        <Link to="/form"><button className="btnLanding">FORM</button></Link>
-        <Link to="/myDogs"><button className="btnLanding">MY DOGS</button></Link>
-        <Link to="/apiDogs"><button className="btnLanding">APIDOGS</button></Link>
-        <FilterButton />
+            <Link to="/home" >
+        <h1 className="title" onClick={()=> setIsOpen(!isOpen)}>🐶Perritos🦴</h1>
+            </Link>
+    
+         <div className="cont">
+        <div className={`butons-responsive ${isOpen && "open"}`}>
+        <Link to="/home"><button className="btnLanding butonsResponsive" onClick={()=> setIsOpen(!isOpen)}>HOME</button></Link>
+        <Link to="/form"><button className="btnLanding butonsResponsive" onClick={()=> setIsOpen(!isOpen)}>FORM</button></Link>
+        <Link to="/myDogs"><button className="btnLanding butonsResponsive" onClick={()=> setIsOpen(!isOpen)}>MY DOGS</button></Link>
+        <Link to="/apiDogs"><button className="btnLanding butonsResponsive" onClick={()=> setIsOpen(!isOpen)}>APIDOGS</button></Link>
         </div>
-        <div>
-        <SearchBar />
+        <FilterButton />
+         </div>
+         <SearchBar />
+
+        <div className={`toggle ${isOpen && "open"}`} onClick={()=> setIsOpen(!isOpen)}>
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
         </nav>
     )

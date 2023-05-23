@@ -10,6 +10,7 @@ const FilterButton = () => {
     const temperamentSelect = useSelector((state)=> state.temperaments);
 
     temperamentSelect.forEach((element)=>{
+
         if(element.nombre){
             const emotion = element.nombre.split(",")
             emotion.forEach((el)=> {
@@ -18,6 +19,7 @@ const FilterButton = () => {
                 }
             })
         }
+
     })
     const handleFilter = (event)=> {
         dispatch(filter_page(event.target.value))
@@ -26,7 +28,6 @@ const FilterButton = () => {
     const handleTemperament = (event)=>{
        dispatch(filterTemp(event.target.value))
     }
-
     useEffect(()=> {
         dispatch(getAllTemperament())
     },[dispatch])
@@ -42,7 +43,7 @@ const FilterButton = () => {
                 {
                     empty.map((temperament)=> {
                         return(
-                            <option value={temperament}  className="option">{temperament}</option>
+                            <option value={temperament}  className="option" key={temperament.id}>{temperament}</option>
                         )
                     })
                 }

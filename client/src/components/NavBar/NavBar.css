@@ -4,12 +4,17 @@
 @import url('https://fonts.googleapis.com/css2?family=League+Gothic&display=swap');
 
 nav{
-    position: fixed;
-    width: 100vw;
+    background-color: rgb(80, 65, 49);
+    width: 100%;
+    height: 90px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgb(80, 65, 49);
+    position: fixed;
+}
+.btns{
+    display: flex;
+    flex-direction: column;
 }
 .title{
     color: white;
@@ -19,6 +24,7 @@ nav{
 .botonsLanding{
     display: flex;
     align-items: center;
+    justify-content: space-around;
 }
 .btnLanding{
     border: none;
@@ -36,10 +42,14 @@ nav{
 .btnLanding:hover{
     background-color: rgb(80, 65, 49);
     color: rgb(255, 234, 225);
-    border: 1px solid rgb(255, 234, 225);
 }
 option{
     text-align: center;
+}
+.container-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .containerGeneral{
     padding-top: 100px;
@@ -60,13 +70,127 @@ option{
 .searchbar:focus{
     outline: none;
 }
+.cont{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
 .butonS{
     width: 45px;
     border: none;
     background-color: rgb(206, 119, 19);
     cursor: pointer;
 }
+.butons-responsive{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 .formSearch{
     margin: 20px;
     display: flex;
+}
+.toggle{
+    display: none;
+}
+@media (max-width: 900px){
+    .title{
+        font-size: 23px;
+    }
+}
+@media (max-width: 866px){
+    
+    .title{
+        font-size: 17px;
+    }
+    .butons-responsive{
+        position: fixed;
+        top: 90px;
+        right: 0;
+        width: 100%;
+        background-color: orange;
+        height: 100%;
+        transition: all .8s ;
+        transform: translateX(-100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: center;
+    }
+    .butonsResponsive{
+        border: none;
+        padding: 10px;
+        width: 100vw;
+        text-align: center;
+        cursor: pointer;
+        margin: 2px;
+        border-radius: 2px;
+        background-color: rgb(255, 234, 225);
+        color: rgb(80, 65, 49);
+        font-family: 'Archivo Black', sans-serif;
+        transition: all.3s;
+    }
+    .butons-responsive:hover{
+        background-color: rgb(80, 65, 49);
+        color: rgb(255, 234, 225);
+    }
+    .butons-responsive.open{
+        transform: translateX(0) !important;
+    }
+    .toggle{
+        display: flex !important;
+        flex-direction: column;
+        margin: 15px;
+        cursor: pointer;
+    }
+    .toggle span{
+        width: 30px;
+        height: 4px;
+        background: white;
+        margin-bottom: 5px;
+        border-radius: 2px;
+        transform-origin: 5px 0px;
+        transition: all .2s linear;
+    }
+    .toggle.open > span{
+        transform: rotate(45deg) translate(0px, 0px);
+    }
+    .toggle.open > span:nth-child(2){
+        display: none;
+    }
+    .toggle.open > span:nth-child(3){
+        transform: rotate(-45deg) translate(-5px, 1px);
+    }
+}
+@media (max-width: 714px){
+    nav{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+    }
+    .butons-responsive{
+        position: absolute;
+        top: 227px;
+        right: 0;
+        width: 100%;
+        height: auto;
+        background-color: orange;
+        height: 100%;
+        transition: all .8s ;
+        transform: translateX(-100%);
+        display: flex;
+        flex-direction: column;
+        justify-content: right;
+        align-items: center;
+    }
+    .butons-responsive.open{
+        height: 100vh;
+    }
 }
