@@ -8,7 +8,7 @@ const NavBar = ()=>{
     const [isOpen, setIsOpen] = useState(false)
     return(
         <nav>
-            <Link to="/home" >
+            <Link to="/home" className="link">
         <h1 className="title" onClick={()=> setIsOpen(!isOpen)}>🐶Perritos🦴</h1>
             </Link>
     

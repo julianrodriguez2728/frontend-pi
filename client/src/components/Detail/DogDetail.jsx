@@ -1,9 +1,9 @@
-const DogDetail = () => {
+const DogDetail = () =>{
     return(
-        <>
-        <h1>DETALLES DE DOGOS</h1>
-        </>
+        <div>
+            <h1>DOG DETAIL</h1>
+        </div>
     )
 }
 
-export default DogDetail;
+export default DogDetail

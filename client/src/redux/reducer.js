@@ -1,4 +1,4 @@
-import { GET_DOGS, NEXT_PAGE ,PREV_PAGE, DOG_DETAIL, DOG_SEARCH_NAME, FILTER_PAGE, TEMPERAMENTS,FILTER_TEMPERAMENTS, CREATE_DOG} from "./action_types"
+import { GET_DOGS, NEXT_PAGE ,PREV_PAGE, DOG_DETAIL, DOG_SEARCH_NAME, FILTER_PAGE, TEMPERAMENTS,FILTER_TEMPERAMENTS, CREATE_DOG, RESET_PAGE, WEIGHT_FILTER, CLEAR_STATE, ORDER_PESO, CLEAR_DETAIL} from "./action_types"
 
 const initialState = {
     numPage: 1,
@@ -23,11 +23,13 @@ const reducer = (state = initialState, action) => {
             ...state,
             dogDetail: action.payload
         }
+
         case DOG_SEARCH_NAME:
             return{
                 ...state,
                 dogs: action.payload
             }
+
         case FILTER_PAGE:
             let copy = [...state.dogs];
             copy = copy.sort((a,b)=> {
@@ -37,11 +39,13 @@ const reducer = (state = initialState, action) => {
             })
              return {...state, dogs: copy}   
               
+
         case TEMPERAMENTS:
             return{
                 ...state,
                 temperaments: action.payload
             }
+
         case FILTER_TEMPERAMENTS:
 
            const copia =  [...state.allDogs];
@@ -58,19 +62,50 @@ const reducer = (state = initialState, action) => {
             
             return{...state, dogs: filtered}
 
+        case CLEAR_DETAIL:
+            return{...state, dogDetail: []}  
+
+
         case CREATE_DOG: 
         return {...state}
+
 
         case NEXT_PAGE:
             return{
                 ...state,
                 numPage: state.numPage +1 
             }
+
         case PREV_PAGE:
             return{
                 ...state,
                 numPage: state.numPage -1
             } 
+
+        case RESET_PAGE:
+            return{
+                ...state,
+                numPage: 1
+            }
+        case ORDER_PESO:
+            let copyState = [...state.dogs];
+            let payload = action.payload;
+
+            copyState.sort((a,b)=>{
+                let weightA = parseInt(a.peso.split("-")[0])
+                let weightB = parseInt(b.peso.split("-")[0])
+                if(weightA < weightB){
+                    return payload === "HIGH" ? 1 : -1;
+                }
+                if(weightA > weightB){
+                    return payload === "LOW" ? 1 : -1;
+                }
+                return 0
+
+            })
+            console.log(copyState);
+            
+            return{...state, dogs: copyState}
         default: 
             return {...state}
        

@@ -16,11 +16,17 @@ const Paginate = ({cantidad})=>{
     return(
         <div className="containerPaginate">
             {   
-                numPage > 1 ?<button onClick={prev} className="botonPN">◀</button> : null
+                numPage > 1 ? (<button onClick={prev} className="botonPN">◀</button>) : null
             }
-            <h3 className="numberC">{numPage-1}</h3>
+            {
+                numPage > 1 ? <h3 className="numberC">{numPage-1}</h3> : null
+
+            }
             <h3 className="number">{numPage}</h3>
-            <h3 className="numberC">{numPage+1}</h3>
+            {
+                numPage < cantidad ? <h3 className="numberC">{numPage+1}</h3> : null
+            }
+            
             {
                 numPage < cantidad ? <button onClick={next} className="botonPN">▶</button> : null
             }

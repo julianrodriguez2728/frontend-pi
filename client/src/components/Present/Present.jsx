@@ -5,7 +5,7 @@ const Present = () => {
     return(
         <div className="presContainer">
             <div className="butons">
-            <Link to='/home' className="titleb"><h2 className="btnP">COMENZAR</h2></Link>
+            <Link to='/home' className="titleb link"><h2 className="btnP link" >COMENZAR</h2></Link>
             </div>
         </div>
     )

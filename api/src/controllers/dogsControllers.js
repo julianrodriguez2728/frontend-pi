@@ -1,4 +1,4 @@
-
+const {Op} = require("sequelize")
 const {Dog} = require("../db");
 const axios = require('axios');
 const {Temperament} = require("../db");
@@ -63,7 +63,9 @@ const getName = async (nombre) => {
     const name = nombre.toLowerCase();
     const bdd = await Dog.findAll({
         where: {
-            nombre: name
+            nombre: {
+                [Op.iLike] : `%${name}%`
+            }
         }
     });
     let api = await dogos();

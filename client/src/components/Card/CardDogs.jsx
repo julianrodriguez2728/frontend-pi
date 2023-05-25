@@ -23,8 +23,13 @@ const CardDogs = () => {
     return(
         <div className="containerGeneral">
         <div className="cards-container">
+
             {
-                viewDogs.map((dog)=> {
+                dogs.length === 0 
+                ?<div className="loading">
+                    <img src="https://i.pinimg.com/originals/d2/99/40/d2994005233783287041f6b90980546b.gif" alt=""  className="loading-pic" /> 
+                </div> 
+                :viewDogs.map((dog)=> {
                     return(
                         <CardDog 
                         key={dog.id}

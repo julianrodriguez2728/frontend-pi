@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filter_page, getAllTemperament , filterTemp} from "../../../redux/actions";
+import { filter_page, getAllTemperament , filterTemp, resetPage, filterPeso} from "../../../redux/actions";
 import { useEffect } from "react";
 import '../NavBar.css';
 
@@ -24,9 +24,13 @@ const FilterButton = () => {
     const handleFilter = (event)=> {
         dispatch(filter_page(event.target.value))
     }
-
+   
     const handleTemperament = (event)=>{
        dispatch(filterTemp(event.target.value))
+       dispatch(resetPage())
+    }
+    const handlePeso = (event) => {
+        dispatch(filterPeso(event.target.value))
     }
     useEffect(()=> {
         dispatch(getAllTemperament())
@@ -47,6 +51,11 @@ const FilterButton = () => {
                         )
                     })
                 }
+            </select>
+            <select name="peso" onChange={handlePeso} className="btnLanding">
+                <option value="">WEIGHT</option>
+                <option value="HIGH">+</option>
+                <option value="LOW">-</option>
             </select>
         </div>
     )

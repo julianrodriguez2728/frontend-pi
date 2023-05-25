@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDogsById } from "../../redux/actions";
+import { getDogsById, clearDetail } from "../../redux/actions";
 import { useEffect } from "react";
+
 import "./Detail.css"
 const Detail = () => {
     const {id} = useParams();
@@ -9,12 +10,19 @@ const Detail = () => {
     const dogId = useSelector((state)=> state.dogDetail)
     
     useEffect(()=> {
+        dispatch(clearDetail())
         dispatch(getDogsById(id))
     },[])
 
     return (
         <>
          <div className="allDetail">{
+            dogId.length === 0 
+            ? 
+            <div className="loading">
+                    <img src="https://i.pinimg.com/originals/d2/99/40/d2994005233783287041f6b90980546b.gif" alt=""  className="loading-pic" /> 
+            </div> 
+            : 
             Array.isArray(dogId) ? 
             dogId.map((dog)=>{
                 return(
@@ -42,9 +50,11 @@ const Detail = () => {
             <h3>peso: {dogId.peso}kg</h3>
             <h3>Altura: {dogId.altura}cm</h3>
             <h3>Años: {dogId.years}</h3>
-            {Array.isArray(dogId.temperamento) ? dogId.temperamento.map((e)=>{
+            {   Array.isArray(dogId.temperamento) ? dogId.temperamento.map((e)=>{
                 return(
-                    <p>temperamento {e}</p>
+                    <div>
+                    <h3>{e}</h3>
+                    </div>
                     )
                 }): <p>{dogId.temperamento}</p>}
             </div>

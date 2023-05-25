@@ -17,7 +17,9 @@ const MyDogs = () =>{
         <div className="cards-container">
             {
                 filter.length === 0 
-                ? <p>No tienes ningun perrito.... puedes crear tus perros haciendo click  <Link to="/form">acá</Link> </p> 
+                ? <div className="noOne">
+                <h2>No tienes ningun perrito.... puedes crear tus perros haciendo click  <Link to="/form">acá</Link> </h2> 
+                </div>
                 :filter.map((dog)=>{
                     return(
                         <CardDog 

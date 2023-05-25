@@ -7,4 +7,7 @@ export const FILTER_PAGE ='FILTER_PAGE';
 export const TEMPERAMENTS = 'TEMPERAMENTS';
 export const FILTER_TEMPERAMENTS = 'FILTER_TEMPERAMENTS';
 export const CREATE_DOG = 'CREATE_DOG';
+export const RESET_PAGE = 'RESET_PAGE';
+export const ORDER_PESO ='ORDER_PESO';
+export const CLEAR_DETAIL = "CLEAR_DETAIL";
 

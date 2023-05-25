@@ -1,4 +1,4 @@
-import { DOG_DETAIL, GET_DOGS , NEXT_PAGE, PREV_PAGE, DOG_SEARCH_NAME, FILTER_PAGE, TEMPERAMENTS, FILTER_TEMPERAMENTS, CREATE_DOG} from "./action_types";
+import { DOG_DETAIL, GET_DOGS , NEXT_PAGE, PREV_PAGE, DOG_SEARCH_NAME, FILTER_PAGE, TEMPERAMENTS, FILTER_TEMPERAMENTS, CREATE_DOG, RESET_PAGE, ORDER_PESO, CLEAR_DETAIL} from "./action_types";
 import axios from "axios"
 
 export const getDogs = () => {
@@ -31,9 +31,18 @@ export const getDogsByName = (name) => {
   }
 }
 
+export const filterPeso = (obj) =>{
+  return{type: ORDER_PESO , payload: obj}
+}
+
+
+
+export const clearDetail = () =>{
+  return {type: CLEAR_DETAIL  }
+}
 export const filter_page = (order) => {
   return {type: FILTER_PAGE, payload:order}
-;}
+}
 
 export const getAllTemperament = () => {
   return async function(dispatch){
@@ -50,6 +59,11 @@ export const nextPage = ()=>{
 }
 export const prevPage = ()=>{
   return {type: PREV_PAGE }
+}
+export const resetPage = ()=>{
+  return{
+    type: RESET_PAGE
+  }
 }
 export const createDog = form => async dispatch => {
   let dogs = await axios.post('http://localhost:3001/dogs', form);

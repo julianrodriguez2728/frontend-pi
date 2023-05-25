@@ -1,14 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Tilt+Warp&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Concert+One&display=swap');
-
+.link{
+    text-decoration: none;
+}
 .presContainer{
     height: 100vh;
     width: 100vw;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-image: url("./COMENZAR2.png");
+    background-image: url(https://img.freepik.com/vector-gratis/marco-vector-perros-sobre-fondo-blanco_53876-127700.jpg?w=2000);
     background-image: no-repeat;
 background-image: fixed;
 background-image: center;
@@ -18,7 +20,7 @@ background-image: center;
 background-size: cover;
 }
 .butons{
-    height:  70%;
+    height:  90%;
     width: 200px;
     display: flex;
     justify-content: space-around;
@@ -26,7 +28,7 @@ background-size: cover;
 }
 .btnP{
     cursor: pointer;
-    color: white;
+    color: rgb(121, 100, 90);
     font-family: 'Tilt Warp', cursive;
     background: none;
     font-size: 150px;

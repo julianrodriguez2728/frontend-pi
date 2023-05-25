@@ -10,4 +10,4 @@ const store = createStore(
     composeEnhancer(applyMiddleware(thunkMiddlewate)) //esto sirve para que podamos hacer peticiones a una Api/Servidor
 );
 
-export default store;
+export default store;   

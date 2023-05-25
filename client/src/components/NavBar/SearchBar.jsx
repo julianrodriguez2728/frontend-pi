@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { useDispatch } from "react-redux";
 import { getDogsByName } from "../../redux/actions";
-
+import { resetPage } from "../../redux/actions";
 import lupa from "./search.png"
 const SearchBar = () => {
     const dispatch = useDispatch();
@@ -13,6 +13,7 @@ const SearchBar = () => {
     const submitChange = (event) => {
         event.preventDefault()
         dispatch(getDogsByName(nombre))
+       dispatch(resetPage())
     }
     return ( 
         <div>

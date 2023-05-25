@@ -3,6 +3,10 @@
     display: flex;
     justify-content: center;
 }
+.loading{
+    width: 100%;
+    height: 100vh;
+}
 .detailContainer{
     padding: 30px;
     width: auto ;
