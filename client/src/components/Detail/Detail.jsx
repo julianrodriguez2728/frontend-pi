@@ -26,7 +26,7 @@ const Detail = () => {
             Array.isArray(dogId) ? 
             dogId.map((dog)=>{
                 return(
-                    <div className="detailContainer">
+                    <div className="detailContainer" key={dog.id}>
                     <div className="container-img">
                    <img src={dog.image  } className="imageDetail" />
                     </div>
@@ -41,7 +41,7 @@ const Detail = () => {
                 )
             })
             :
-            <div className="detailContainer">
+            <div className="detailContainer" key={dogId.id}>
             <div className="container-img">
             <img src={dogId.image} alt="" className="imageDetail" />
             </div>

@@ -61,7 +61,8 @@ const createdDog = async(nombre, altura, peso, years, temperamento,image)=>{
 
 const getName = async (nombre) => {
     const name = nombre.toLowerCase();
-    const bdd = await Dog.findAll({
+    
+   const bdd = await Dog.findAll({
         where: {
             nombre: {
                 [Op.iLike] : `%${name}%`
@@ -71,11 +72,19 @@ const getName = async (nombre) => {
     let api = await dogos();
 
 
-   
+    const response = api.filter((dog) => {
+
+        let min = dog.nombre.toLowerCase()
+
+        let spliting = min.split(' ')
+
+        return spliting.some(element=> element.includes(name))
+    });
     if(bdd.length > 0){
         return bdd
     }
-    const response = api.filter(dog => dog.nombre.toLowerCase() === nombre);
+    
+   
     if(response.length === 0){
         alert("NO HAY PERRO CON ESE NOMBRE")
     }else{

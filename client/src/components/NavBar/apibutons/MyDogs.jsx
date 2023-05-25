@@ -11,7 +11,6 @@ const MyDogs = () =>{
     })
     
 
-    console.log(filter)
     return(
         <div className="containerGeneral">
         <div className="cards-container">

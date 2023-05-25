@@ -59,15 +59,15 @@ const Form = ()=> {
 
 
     }
-    const include =  perritos.some(perrito => perrito.nombre === form.nombre);
-
+    const include =  perritos.some(perrito => perrito.nombre.toLowerCase() === form.nombre.toLowerCase());
+    console.log(include)
     const handleError = ()=> {
         if(/\d/.test(form.nombre)){
             setErrors({
                 ...errors,
                 nombre:'The name cannot contain numbers'
             })
-        }else if(include){
+        }else if(include === true){
             setErrors({
                 ...errors,
                 nombre:'YA EXISTE'

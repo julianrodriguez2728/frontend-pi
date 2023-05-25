@@ -3,8 +3,12 @@ import { useDispatch } from "react-redux";
 import { getDogsByName } from "../../redux/actions";
 import { resetPage } from "../../redux/actions";
 import lupa from "./search.png"
+import {useNavigate} from "react-router-dom"
+
 const SearchBar = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     // const {dogs} = useSelector(state=> state)
     const [nombre, setNombre] = useState("");
     const handleChange = (event) => {
@@ -14,6 +18,8 @@ const SearchBar = () => {
         event.preventDefault()
         dispatch(getDogsByName(nombre))
        dispatch(resetPage())
+       navigate('/home')
+
     }
     return ( 
         <div>

@@ -12,13 +12,15 @@ const FilterButton = () => {
     temperamentSelect.forEach((element)=>{
 
         if(element.nombre){
-            const emotion = element.nombre.split(",")
-            emotion.forEach((el)=> {
-                if(!empty.includes(el)){
-                    empty.push(el)
-                }
-            })
-        }
+            const resp = element.nombre.split(",")
+            const emotion = {nombre : resp, id:element.id}
+          
+                emotion.nombre.forEach((el)=> {
+                    if(!empty.includes(el)){
+                        empty.push(el)
+                    }
+                })
+            }
 
     })
     const handleFilter = (event)=> {
