@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import "./cards.css"
 
-const CardDog = ({nombre, image,  peso ,temperamento,id}) => {
+const CardDog = ({nombre, image,  peso ,temperamento,id,years}) => {
     return(
         <div className="container2" key={id}>
             <Link to={`/dogs/${id}`}>
@@ -12,6 +12,7 @@ const CardDog = ({nombre, image,  peso ,temperamento,id}) => {
             <h2 className="title-dog">{nombre}🐾</h2>
             <div className="contianer-detail">
             <h3>{peso}</h3>
+            <h3>{years}</h3>
             <div className="temperamentContainer">
             <h4>.{temperamento}</h4>
             </div>

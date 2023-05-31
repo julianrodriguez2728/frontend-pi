@@ -38,6 +38,7 @@ const CardDogs = () => {
                         nombre={dog.nombre}
                         temperamento={dog.temperamento}
                         peso={dog.peso}
+                        years={dog.years}
                         />
                         )
                     })

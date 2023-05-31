@@ -34,11 +34,8 @@ const createDog = async (req,res) => {
     try {
         const response = await createdDog(nombre,altura,peso,years,temperamento,image);
         res.status(200).json(response)
-
     } catch (error) {
-
         res.status(400).json({error: error.message})
-        
     }
 }
 const dogDetail = async(req,res) => {
