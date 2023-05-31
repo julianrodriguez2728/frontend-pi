@@ -1,7 +1,7 @@
 import { useDispatch, useSelector} from "react-redux";
 import "./form.css"
 import {  useState } from "react";
-import { createDog } from "../../redux/actions.jsx";
+import { createDog } from "../../redux/actions.js";
 import {useNavigate} from "react-router-dom"
 
 const Form = ()=> {

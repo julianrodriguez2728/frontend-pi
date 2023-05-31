@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getDogsById, clearDetail } from "../../redux/actions.jsx";
+import { getDogsById, clearDetail } from "../../redux/actions.js";
 import { useEffect } from "react";
 
 import "./Detail.css"

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { filter_page, getAllTemperament , filterTemp, resetPage, filterPeso} from "../../../redux/actions.jsx";
+import { filter_page, getAllTemperament , filterTemp, resetPage, filterPeso} from "../../../redux/actions.js";
 import { useEffect } from "react";
 import '../NavBar.css';
 

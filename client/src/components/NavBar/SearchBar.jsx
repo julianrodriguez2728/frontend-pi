@@ -1,7 +1,7 @@
 import {  useState } from "react";
 import { useDispatch } from "react-redux";
-import { getDogsByName } from "../../redux/actions.jsx";
-import { resetPage } from "../../redux/actions.jsx";
+import { getDogsByName } from "../../redux/actions.js";
+import { resetPage } from "../../redux/actions.js";
 import lupa from "./search.png"
 import {useNavigate} from "react-router-dom"
 
