@@ -6,7 +6,7 @@ import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import store from "./redux/store"
 import {BrowserRouter} from "react-router-dom";
-axios.defaults.baseURL = 'https://adept-class-production.up.railway.app';
+axios.defaults.baseURL = 'https://frontend-pi-production.up.railway.app';
 
 ReactDOM.render(
   <Provider store={store}>
