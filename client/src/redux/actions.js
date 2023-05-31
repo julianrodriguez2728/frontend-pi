@@ -3,7 +3,7 @@ import axios from "axios"
 
 export const getDogs = () => {
     return async function(dispatch){
-        await axios.get('http://localhost:3001/dogs')
+        await axios.get('/dogs')
         .then(response => response.data)
         .then(data => dispatch({type: GET_DOGS, payload: data}))
     }
@@ -11,7 +11,7 @@ export const getDogs = () => {
 
 export const getDogsById = (id) => {
   return async function(dispatch){
-      await axios.get(`http://localhost:3001/dogs/${id}`)
+      await axios.get(`/dogs/${id}`)
       .then(response => response.data)
       .then(data => dispatch({type: DOG_DETAIL, payload: data}))
   }
@@ -20,7 +20,7 @@ export const getDogsById = (id) => {
 export const getDogsByName = (name) => {
   return async function(dispatch){
     try {
-     const resp =  await axios.get(`http://localhost:3001/dogs/?nombre=${name}` )
+     const resp =  await axios.get(`/dogs/?nombre=${name}` )
       let perr = resp.data;
 
      if(perr.length > 0) dispatch({type: DOG_SEARCH_NAME, payload: perr})
@@ -46,7 +46,7 @@ export const filter_page = (order) => {
 
 export const getAllTemperament = () => {
   return async function(dispatch){
-    await axios.get(`http://localhost:3001/temperament`)
+    await axios.get(`/temperament`)
     .then(response => response.data)
     .then(data => dispatch({type: TEMPERAMENTS, payload: data}))
 }
@@ -66,7 +66,7 @@ export const resetPage = ()=>{
   }
 }
 export const createDog = form => async dispatch => {
-  let dogs = await axios.post('http://localhost:3001/dogs', form);
+  let dogs = await axios.post('/dogs', form);
   console.log(dogs)
   return dispatch({
     type: CREATE_DOG,
