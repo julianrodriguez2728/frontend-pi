@@ -1,4 +1,4 @@
-const { createdDog, dogos, dogFn , getName, temperament} = require("../controllers/dogsControllers")
+const { createdDog, dogos, dogFn , getName, temperament} = require("../controllers/dogsControllers.js")
 
 const dogsRace = async(req, res) => {
 

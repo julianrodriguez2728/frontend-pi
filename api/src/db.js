@@ -6,8 +6,8 @@ const {
   DB_USER, DB_PASSWORD, DB_HOST,DB_PORT,DB_NAME, DB_DEPLOY
 } = process.env;
 
-const DogFunction = require('./models/Dog');
-const TemperamentFunction = require('./models/Temperament');
+const DogFunction = require('./models/Dog.js');
+const TemperamentFunction = require('./models/Temperament.js');
 
 // const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
 //   logging: false, // set to console.log to see the raw SQL queries
