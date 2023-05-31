@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "@jridgewell/sourcemap-codec": "1.4.15",
+    "stable": "0.1.8"
+  },
+  "devDependencies": {
+    "@rollup/plugin-terser": "0.4.3"
+  }
+}
