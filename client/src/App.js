@@ -1,13 +1,13 @@
 import './App.css';
 import {Routes, Route, useLocation} from "react-router-dom"
-import Detail from './components/Detail/Detail';
-import DogDetail from './components/Detail/DogDetail';
-import Form from './components/Form/Form';
-import CardDogs from "./components/Card/CardDogs";
-import Navbar from './components/NavBar/NavBar';
-import MyDogs from './components/NavBar/apibutons/MyDogs';
-import ApiDogs from "./components/NavBar/apibutons/ApiDogs"
-import Present from './components/Present/Present';
+import Detail from './components/Detail/Detail.jsx';
+import DogDetail from './components/Detail/DogDetail.jsx';
+import Form from './components/Form/Form.jsx';
+import CardDogs from "./components/Card/CardDogs.jsx";
+import Navbar from './components/NavBar/NavBar.jsx';
+import MyDogs from './components/NavBar/apibutons/MyDogs.jsx';
+import ApiDogs from "./components/NavBar/apibutons/ApiDogs.jsx"
+import Present from './components/Present/Present.jsx';
 function App() {
   const {pathname} = useLocation();
   return (

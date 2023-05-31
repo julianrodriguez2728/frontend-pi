@@ -1,6 +1,6 @@
 import SearchBar from "./SearchBar";
 import { Link } from "react-router-dom";
-import FilterButton from "./FilterBtn/FilterButton";
+import FilterButton from "./FilterBtn/FilterButton.jsx";
 import './NavBar.css';
 import { useState } from "react";
 

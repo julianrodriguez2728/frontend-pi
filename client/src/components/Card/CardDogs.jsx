@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getDogs } from "../../redux/actions";
+import { getDogs } from "../../redux/actions.jsx";
 import CardDog from "./CardDog";
 // import Paginate from "./Paginate";
 import "./cards.css"
