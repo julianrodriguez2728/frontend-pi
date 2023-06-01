@@ -6,6 +6,9 @@ export const getDogs = () => {
       try {
         let perros = await axios.get('/dogs')
         let destructuring = perros.data;
+        if(destructuring){
+          alert("ESTAN LLEGANDO LES PERRES")
+        }
         return dispatch({type: GET_DOGS, payload: destructuring})
       } catch (error) {
         alert("BUENAS NOCHES AMERICA AHMMM")
