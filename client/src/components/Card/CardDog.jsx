@@ -11,10 +11,10 @@ const CardDog = ({nombre, image,  peso ,temperamento,id,years}) => {
 
             <h2 className="title-dog">{nombre}🐾</h2>
             <div className="contianer-detail">
-            <h3>{peso}</h3>
-            <h3>{years}</h3>
+            <h3 className="cardh3">{peso}</h3>
+            <h3 className="cardh3">{years}</h3>
             <div className="temperamentContainer">
-            <h4>.{temperamento}</h4>
+            <h4 className="cardh4">.{temperamento}</h4>
             </div>
             </div>
             

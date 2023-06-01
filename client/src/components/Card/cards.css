@@ -80,7 +80,7 @@ h3{
     align-items: center;
 }
 @media (max-width: 714px){
-    .container2{
+    .cards-container{
         padding-top: 180px;
 
     }
@@ -89,4 +89,47 @@ h3{
         width: 300px;
         height: 200px;
         }
+}
+@media (max-width: 389px){
+    #img-dogs{
+        border-radius: 20px 20px 0px 0px ;
+        width: 250px;
+        height: 200px;
+        }
+    .dog-container{
+        height: 250px;
+        width: 250px;
+    }
+    .contianer-detail{
+        width: 100%;
+        height:60%;
+    }
+    .title-dog{
+        font-size: 15px;
+    }
+    .temperamentContainer{
+        width: 100%;
+        height: 100px;
+    }
+    .cardh3{
+        font-size: 10px;
+    }
+    .cardh4{
+        font-size: 15px;
+    }
+    .loading{
+        padding-top: 200px;
+    }
+    .loading-pic{
+        max-width: 200px;
+    }
+    .noOne{
+        padding-top: 130px;
+    }
+    .container2{
+        padding: 0;
+    }
+    .cards-container{
+        padding-top: 200px;
+    }
 }

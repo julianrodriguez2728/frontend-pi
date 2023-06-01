@@ -194,3 +194,25 @@ option{
         height: 100vh;
     }
 }
+@media (max-width: 380px){
+    .btnLanding{
+        width: 80px;
+        font-size: 8px;
+        height: 30px;
+    }
+    .searchbar{
+        width: 80%;
+        height: 20px;
+        font-size: 18px;
+    }
+    .searchBtn{
+        max-width: 20px;
+    }
+    .butonS{
+        width: 30px;
+    }
+    .butons-responsive{
+        top: 207px;
+    }
+  
+}
