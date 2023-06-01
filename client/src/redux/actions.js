@@ -8,9 +8,8 @@ export const getDogs = () => {
         .then(response => response.data)
         .then(data => dispatch({type: GET_DOGS, payload: data}))
       } catch (error) {
-        alert("No hay perros")
+        alert("BUENAS NOCHES AMERICA AHMMM")
       }
-    
     }
 }
 
