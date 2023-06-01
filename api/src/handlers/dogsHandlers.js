@@ -16,13 +16,13 @@ const dogsRace = async(req, res) => {
             }
             
         } else{
-
+            
             const results = await dogos()
             res.status(200).json(results)
         }
         
     } catch (error) {
-        res.status(400).json({error: error.message})
+        res.status(400).send("No hay perros")
 
     }
 };
