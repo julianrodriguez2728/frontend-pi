@@ -3,17 +3,27 @@ import axios from "axios"
 
 export const getDogs = () => {
     return async function(dispatch){
+      try {
         await axios.get('/dogs')
         .then(response => response.data)
         .then(data => dispatch({type: GET_DOGS, payload: data}))
+      } catch (error) {
+        alert("No hay perros")
+      }
+    
     }
 }
 
 export const getDogsById = (id) => {
   return async function(dispatch){
+    try {
       await axios.get(`/dogs/${id}`)
       .then(response => response.data)
       .then(data => dispatch({type: DOG_DETAIL, payload: data}))
+    } catch (error) {
+      alert(error)
+    }
+     
   }
 }
 
@@ -46,9 +56,14 @@ export const filter_page = (order) => {
 
 export const getAllTemperament = () => {
   return async function(dispatch){
-    await axios.get(`/temperament`)
+    try {
+      await axios.get(`/temperament`)
     .then(response => response.data)
     .then(data => dispatch({type: TEMPERAMENTS, payload: data}))
+    } catch (error) {
+      console.log(error);
+    }
+    
 }
 }
 export const filterTemp = (event) => {
@@ -66,12 +81,17 @@ export const resetPage = ()=>{
   }
 }
 export const createDog = form => async dispatch => {
-  let dogs = await axios.post('/dogs', form);
-  console.log(dogs)
-  return dispatch({
-    type: CREATE_DOG,
-    payload: dogs
-  })
+  try {
+    let dogs = await axios.post('/dogs', form);
+    console.log(dogs)
+    return dispatch({
+      type: CREATE_DOG,
+      payload: dogs
+    })
+  } catch (error) {
+    console.log(error)
+  }
+ 
   // return async function(dispatch){
   //   console.log(obj)
   //   return await axios.post(`http://localhost:3001/dogs`, form)
