@@ -4,9 +4,9 @@ import axios from "axios"
 export const getDogs = () => {
     return async function(dispatch){
       try {
-        await axios.get('/dogs')
-        .then(response => response.data)
-        .then(data => dispatch({type: GET_DOGS, payload: data}))
+        let perros = await axios.get('/dogs')
+        let destructuring = perros.data;
+        return dispatch({type: GET_DOGS, payload: destructuring})
       } catch (error) {
         alert("BUENAS NOCHES AMERICA AHMMM")
       }
