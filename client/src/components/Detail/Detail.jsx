@@ -32,10 +32,10 @@ const Detail = () => {
                     </div>
                     <div className="container-info">
                     <h1  className="title-dog">{dog.nombre}</h1>
-                    <h3>{dog.peso}KG`</h3>
-                    <h3>{dog.altura}FT</h3>
-                    <h3>{dog.years} ago</h3>
-                    <h3>{dog.temperamento}</h3>
+                    <h3 className="detailh3">{dog.peso}KG`</h3>
+                    <h3 className="detailh3">{dog.altura}FT</h3>
+                    <h3 className="detailh3">{dog.years} ago</h3>
+                    <h3 className="detailh3">{dog.temperamento}</h3>
                     </div>
                     </div>
                 )
@@ -47,13 +47,13 @@ const Detail = () => {
             </div>
             <div className="container-info">
             <h1 className="title-dog">{dogId.nombre}</h1>
-            <h3>peso: {dogId.peso}kg</h3>
-            <h3>Altura: {dogId.altura}cm</h3>
-            <h3>Años: {dogId.years}</h3>
+            <h3 className="detailh3">peso: {dogId.peso}kg</h3>
+            <h3 className="detailh3">Altura: {dogId.altura}cm</h3>
+            <h3 className="detailh3">Años: {dogId.years}</h3>
             {   Array.isArray(dogId.temperamento) ? dogId.temperamento.map((e)=>{
                 return(
                     <div>
-                    <h3>{e}</h3>
+                    <h3 className="detailh3">{e}</h3>
                     </div>
                     )
                 }): <p>{dogId.temperamento}</p>}

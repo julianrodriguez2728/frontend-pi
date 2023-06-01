@@ -83,3 +83,23 @@ input:focus{
         padding: 25px;
     }
 }
+@media (max-width: 389px){
+    .Form{
+        width: 80%;
+    }
+    .container-input{
+        text-align: center;
+    }
+    input{
+        width: 200px;
+    }
+    .detailContainer{
+        width: 80%;
+    }
+    .allDetail{
+        padding-top: 280px;
+    }
+    .detailh3{
+        font-size: 15px;
+    }
+}

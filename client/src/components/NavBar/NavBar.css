@@ -214,5 +214,7 @@ option{
     .butons-responsive{
         top: 207px;
     }
-  
+    nav{
+        width: 100%;
+    }
 }
