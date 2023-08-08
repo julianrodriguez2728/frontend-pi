@@ -15,8 +15,14 @@ const DogFunction = require('./models/Dog.js');
 const TemperamentFunction = require('./models/Temperament.js');
 
 const sequelize = new Sequelize(`postgres://dogs_1a19_user:9VfIuqBWtE9UGuQJDcfqcCuBtes5Cpbr@dpg-cj992qavvtos73cav2vg-a.oregon-postgres.render.com/dogs_1a19`, {
-  logging: false, // set to console.log to see the raw SQL queries
-  native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+  dialect: 'postgres',
+  dialectOptions: {
+    ssl: {
+      require: true,
+      rejectUnauthorized: false, 
+    },
+  },
+  logging: false, 
 });
 // const sequelize = new Sequelize(DB_DEPLOY, {
 //   logging: false, // set to console.log to see the raw SQL queries
