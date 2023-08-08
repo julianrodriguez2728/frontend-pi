@@ -3,20 +3,25 @@ const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
 const {
-   DB_DEPLOY
+   DB_DEPLOY,
+   DB_NAME,
+   DB_PASSWORD,
+   DB_HOST,
+   DB_PORT,
+   DB_USER
 } = process.env;
 
 const DogFunction = require('./models/Dog.js');
 const TemperamentFunction = require('./models/Temperament.js');
 
-// const sequelize = new Sequelize(`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}`, {
-//   logging: false, // set to console.log to see the raw SQL queries
-//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
-// });
-const sequelize = new Sequelize(DB_DEPLOY, {
+const sequelize = new Sequelize(`postgres://dogs_1a19_user:9VfIuqBWtE9UGuQJDcfqcCuBtes5Cpbr@dpg-cj992qavvtos73cav2vg-a.oregon-postgres.render.com/dogs_1a19`, {
   logging: false, // set to console.log to see the raw SQL queries
   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 });
+// const sequelize = new Sequelize(DB_DEPLOY, {
+//   logging: false, // set to console.log to see the raw SQL queries
+//   native: false, // lets Sequelize know we can use pg-native for ~30% more speed
+// });
 
 const basename = path.basename(__filename);
 
